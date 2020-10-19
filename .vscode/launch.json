@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GatewayApplication<gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "academy.devdojo.youtube.gateway.GatewayApplication",
+            "projectName": "gateway",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryApplication<discovery>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.academy.devdojo.youtube.discovery.DiscoveryApplication",
+            "projectName": "discovery",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-CourseApplication<course>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "academy.devdojo.youtube.course.CourseApplication",
+            "projectName": "course",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AuthApplication<auth>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "academy.devdojo.youtube.auth.AuthApplication",
+            "projectName": "auth",
+            "args": ""
+        }
+    ]
+}

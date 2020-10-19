@@ -1,0 +1,4 @@
+C:\Users\rafa_\eclipse-workspace\microservice\auth\src\main\java\academy\devdojo\youtube\auth\AuthApplication.java
+C:\Users\rafa_\eclipse-workspace\microservice\auth\src\main\java\academy\devdojo\youtube\security\config\SecurityCredentialsConfig.java
+C:\Users\rafa_\eclipse-workspace\microservice\auth\src\main\java\academy\devdojo\youtube\security\filter\JwtUsernameAndPasswordAuthenticationFilter.java
+C:\Users\rafa_\eclipse-workspace\microservice\auth\src\main\java\academy\devdojo\youtube\security\user\UserDetailsServiceImpl.java
