@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import academy.devdojo.youtube.core.property.JwtConfiguration;
 
+//author Rafael Bizi
 @SpringBootApplication
 @EnableConfigurationProperties(value = JwtConfiguration.class)
 @EntityScan({"academy.devdojo.youtube.core.model"})
