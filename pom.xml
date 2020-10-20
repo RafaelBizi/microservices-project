@@ -134,22 +134,22 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			<version>6.6.0</version>
+			<version>5.5.0</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-java -->
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
 		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>1.2.5</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-junit -->
-		<dependency>
-			<groupId>info.cukes</groupId>
+			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
+			<version>5.5.0</version>
 			<scope>test</scope>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>5.2.9.RELEASE</version>
 		</dependency>
 
 	</dependencies>
