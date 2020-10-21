@@ -6,9 +6,9 @@ import academy.devdojo.youtube.course.endpoint.controller.CourseController;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,17 +16,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-public class CourseEndpointStepdefs {
+public class CreatingNewCourseStepdefs {
+    private Map<Integer, String> createCourseMap = new HashMap<>();
 
     // simula uma alteração no banco de dados
     @MockBean
@@ -45,6 +46,7 @@ public class CourseEndpointStepdefs {
 
     private Course course = new Course();
 
+
     @Given("I'm accessing the URL {string}")
     public void i_m_accessing_the_URL(String URL) throws Throwable{
         // Write code here that turns the phrase above into concrete actions
@@ -55,25 +57,28 @@ public class CourseEndpointStepdefs {
     @Test
     @Given("^I can create a new course$")
     public void iCanCreateANewCourse() throws Throwable{
-        System.out.println("I can create a new course: ");
-        ResponseEntity<Course[]> response = restTemplate
-                .getForEntity("http://localhost:8080/gateway/course/v1/admin/course",Course[].class);
+        ResponseEntity<Course> response = restTemplate
+                .getForEntity("http://localhost:8080/gateway/course/v1/admin/course/4",Course.class);
         Assertions.assertThat(response.getStatusCodeValue()).isEqualTo(200);
+        System.out.println("I can create a new course: ");
     }
 
-    @And("I'm sending post method to be created with {int} and {string}")
-    public void i_m_sending_post_method_to_be_created_with_id_title_cucumber_tutorial_test(Integer id, String tittle) throws Throwable {
-        System.out.println("I'm sending post method to be created with "+id+" and "+tittle);
+    @When("I'm sending post method to add a course with {int} and {string}")
+    public void i_m_sending_post_method_to_add_a_course_with_and(Integer id, String title) {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("I'm sending post method to add a course with id 10 and course name 'Testing cucumber'");
     }
 
-    @Then("^I should be able to see my newly created course$")
-    public void iShouldBeAbleToSeeMyNewlyCreatedCourse() throws Throwable {
-        System.out.println("I should be able to see my newly created course");
+    @Then("I should be able to list my newly created course")
+    public void i_should_be_able_to_list_my_newly_created_course() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("I should be able to list my newly created course");
     }
 
-    @Given("I can list all the courses registered into DB")
-    public void i_can_list_all_the_courses_registered_into_db() throws Throwable{
-        System.out.println("I can list all the courses");
+    @Given("I can create two new courses")
+    public void i_can_create_two_new_courses() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("I can create two new courses");
     }
 
     @And("I'm sending a get method to list all the courses")
@@ -81,8 +86,10 @@ public class CourseEndpointStepdefs {
         System.out.println("I'm sending a get method to list all the courses");
     }
 
-    @Then("I should be able to see all the courses")
-    public void i_should_be_able_to_see_all_the_courses() throws Throwable{
-        System.out.println("I should be able to see all the courses listed");
+    @Then("I should be able to list my newly created courses")
+    public void i_should_be_able_to_list_my_newly_created_courses() {
+        // Write code here that turns the phrase above into concrete actions
+        System.out.println("I should be able to list my newly created courses");
     }
+
 }
